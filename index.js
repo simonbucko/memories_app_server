@@ -6,6 +6,7 @@ import cors from 'cors'
 import dotenv from 'dotenv'
 //routers
 import postRouter from './routes/posts.js'
+import userRouter from './routes/users.js'
 
 const app = express();
 dotenv.config();
@@ -15,6 +16,7 @@ app.use(bodyParser.urlencoded({ limit: '30mb', extended: true }))
 app.use(cors())
 
 app.use('/posts', postRouter)
+app.use('/user', userRouter)
 
 app.get('/', (req, res) => res.send('Hello to memories api'))
 
